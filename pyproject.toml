@@ -11,6 +11,9 @@ dependencies = []
 [tool.uv]
 dev-dependencies = []
 
+[project.optional-dependencies]
+test = ["pytest>=7.0.0"]
+
 
 [build-system]
 requires = ["setuptools"]
