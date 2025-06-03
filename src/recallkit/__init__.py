@@ -1,2 +1,1 @@
-def hello() -> str:
-    return "Hello from recallkit!"
+from .memory_filter import MemoryFilter

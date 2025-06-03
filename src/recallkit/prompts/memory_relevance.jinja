@@ -1,0 +1,28 @@
+You are a helpful assistant tasked with determining the relevance of memories to a conversation.
+
+# CONVERSATION
+# MEMORIES
+Here are the memories to evaluate for relevance to the conversation:
+{% for memory in memories %}
+Memory {{ loop.index }}: {{ memory }}
+{% endfor %}
+
+# TASK
+For each memory, determine if it is relevant to the conversation. A memory is relevant if it:
+1. Contains information that could help answer questions or provide context for the conversation
+2. Relates to topics, entities, or concepts mentioned in the conversation
+3. Provides background information that would be useful for understanding the conversation
+
+# OUTPUT FORMAT
+Respond with a JSON object containing:
+1. "relevance_list": A list of boolean values (true/false) indicating whether each memory is relevant
+2. "reasoning": A brief explanation (<50 words) of your relevance determinations
+
+The length of the relevance_list must be exactly {{ memories|length }}.
+
+Example output format:
+```json
+{
+  "relevance_list": [true, false, true, ...],
+  "reasoning": "Memories 1 and 3 contain information about the project structure mentioned in the conversation, while memory 2 is unrelated."
+}
