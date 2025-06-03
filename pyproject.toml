@@ -6,7 +6,9 @@ readme = "README.md"
 license = "Apache-2.0"
 classifiers = []
 requires-python = ">=3.9"
-dependencies = []
+dependencies = [
+    "litellm",
+]
 
 [tool.uv]
 dev-dependencies = []
